@@ -1,0 +1,8 @@
+#!/bin/sh
+
+[ -d .redo ] || mkdir .redo
+find .redo -name '*.uptodate' -exec rm -f '{}' \;
+find .redo -name '*.prereqs' -exec rm -f '{}' \;
+find .redo -name '*.prereqsne' -exec rm -f '{}' \;
+redo-ifchange it
+
